@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="/public/style.css">
   </head>
   <body>
-    <header>
+    <div id='container'>
+    <div style='text-align: center;'>
       <h1>
         Issue Tracker
       </h1>
-    </header>
-    <section style="margin: 0 50px;">
+    </div>
+    <br>
+    <div style="margin: 0 50px;">
       <h3>Example <code>GET</code> usage</h3>
-      <code>/api/issues/{project}</code><br>
-      <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br>
+      <pre><code>/api/issues/{project}</code></pre>
+      <pre><code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code></pre>
       <h3>Example return</h3>
       <pre>
 <code>[
@@ -36,40 +38,57 @@
  ]
 </code>
 </pre>
-    </section>
-    <hr style='margin: 0 50px'>
-    <section id='testui' style='margin-left: 50px;'>
+    </div>
+    <div id='testui' style='margin-left: 50px;'>
       <h3>Examples</h3>
-      Go to <a href='/api/issues/apitest/'><code>/api/issues/apitest/</code></a>  project
+      <br>
+      <h4>Go to <a href='/api/issues/apitest/'><code>/api/issues/apitest/</code></a>  project</h4>
+      <br>
       <h2 style="text-align: left">API Tests</h2>
-      <h3>Submit issue on <i>apitest</i></h3>
-      <form id="testForm" class="border">
-        <input type="text" name="issue_title" placeholder="*Title" style="width: 100px" required=''><br>
-        <textarea type="text" name="issue_text" placeholder="*Text" style="width: 100px" required=''></textarea><br>
-        <input type="text" name="created_by" placeholder="*Created by" style="width: 100px" required=''><br>
-        <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 100px"><br>
-        <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
-        <button type="submit">Submit Issue</button>
-      </form><br>
-      <h3>Update issue on <i>apitest</i> (Change any or all to update issue on the _id supplied)</h3>
-      <form id="testForm2" class="border">
-        <input type="text" name="_id" placeholder="*_id" style="width: 100px" required=''><br>
-        <input type="text" name="issue_title" placeholder="(opt)Title" style="width: 100px"><br>
-        <textarea type="text" name="issue_text" placeholder="(opt)Text" style="width: 100px"></textarea><br>
-        <input type="text" name="created_by" placeholder="(opt)Created by" style="width: 100px"><br>
-        <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 100px"><br>
-        <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
-        <label><input type="checkbox" name="open" value="false"> Check to close issue</label><br>
-        <button type="submit">Submit Issue</button>
-      </form><br>
-      <h3>Delete issue on <i>apitest</i></h3>
-      <form id="testForm3" class="border">
-        <input type="text" name="_id" placeholder="_id" style="width: 100px" required=''><br>
-        <button type="submit">Delete Issue</button>
+      <br>
+      <section id='apiTest01'>
+        <form id="testForm" class="holder">
+          <h3>Submit issue on <i>apitest</i></h3>
+          <input class='form-control' type="text" name="issue_title" placeholder="*Title" required=''>
+          <section><textarea class='form-control' rows="6" type="text" name="issue_text" placeholder="*Text" required=''></textarea></section>
+          <input class='form-control' type="text" name="created_by" placeholder="*Created by" required=''>
+          <input class='form-control' type="text" name="assigned_to" placeholder="(opt)Assigned to">
+          <input class='form-control' type="text" name="status_text" placeholder="(opt)Status text">
+          <button class='myBtn' type="submit">Submit Issue</button>
+        </form>
+        <form id="testForm2" class="holder">
+          <h3>Update issue on <i>apitest</i></h3>
+          <input class='form-control' type="text" name="_id" placeholder="*_id" required=''>
+          <input class='form-control' type="text" name="issue_title" placeholder="(opt)Title">
+          <section><textarea class='form-control' type="text" name="issue_text" placeholder="(opt)Text"></textarea></section>
+          <input class='form-control' type="text" name="created_by" placeholder="(opt)Created by">
+          <input class='form-control' type="text" name="assigned_to" placeholder="(opt)Assigned to">
+          <input class='form-control' type="text" name="status_text" placeholder="(opt)Status text">
+          <label><input type="checkbox" name="open" value="false"> Check to close issue</label>
+          <button class='myBtn' type="submit">Submit Issue</button>
+        </form>
+      </section>
+      <form id="testForm3">
+        <h3>Delete issue on <i>apitest</i></h3>
+        <input class='form-control' type="text" name="_id" placeholder="_id" required=''>
+        <button class='myBtn' type="submit">Delete Issue</button>
       </form>
       <code id='jsonResult'></code>
-    </section>
-    <hr style='margin: 50px; margin-top: 200px'>
+    </div>
+    
+  </div>
+  <footer>
+    designed and coded by <a href="https://instagram.com/sat_ig462/" target="_blank">Sat_ig462</a> for freeCodeCamp's 
+    <a href="https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker" target="_blank" title="Visit the project page">Information Security and Quality Assurance - Issue Tracker</a> 
+    and built upon the <a href="https://github.com/freeCodeCamp/boilerplate-project-library/" target="_blank" title="Project boilerplate on GitHub">
+    project-specific boilerplate code</a> using JavaScript,
+    <a href="https://api.jquery.com/" title="Learn more about jQuery">jQuery</a> and AJAX, 
+    <a href="https://nodejs.org/" title="Learn more about Node.js">Node.js</a>, 
+    <a href="https://expressjs.com/" target="_blank" title="Learn more about Express.js">Express.js</a>,
+    <a href="https://www.mongodb.com//" target="_blank" title="Learn more about MongoDB">MongoDB</a>,
+    <a href="https://www.chaijs.com/" target="_blank" title="Learn more about Chai.js">Chai.js</a>,
+    and a pinch of CSS.
+  </footer>
     <!-- Your web-app is https, so your scripts need to be too -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
